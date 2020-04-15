@@ -128,6 +128,9 @@ def passenger_seat_in(passenger_number, windows,middle, aisle):
     while passenger_id <= passenger_number:
         seat_array[passenger_id - 1]['passenger_id'] = passenger_id
         passenger_id = passenger_id + 1
+        if passenger_id > len(seat_array) :
+            print("no enough seat for passenger")
+            break
 
     return seat_array
 
@@ -177,6 +180,7 @@ def run_main(passenger_number, seating_grid) :
 if __name__ == "__main__" :
 
     input_seating_grid = [[3, 2], [4, 3], [2, 3], [3, 4]]
+    # input_seating_grid = [[3,1]]
     input_passenger_num = 30
 
     output_grid = run_main(input_passenger_num, input_seating_grid)
